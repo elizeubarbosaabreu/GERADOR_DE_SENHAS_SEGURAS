@@ -47,7 +47,7 @@ layout = [[sg.Stretch(), sg.T('GERADOR DE SENHAS SEGURAS', font=('Arial', 18)), 
            sg.Stretch()],
           [sg.HorizontalSeparator()],
           [sg.VerticalSeparator(),
-           sg.Multiline('#*sUa_sENHA+vAI%aPAREcER@aQui', font=('Courier', 18), size=(30, 1), key='-output-'),
+           sg.T('#*sUa_sENHA+vAI%aPAREcER@aQui', font=('Courier', 18), size=(30, 1), key='-output-'),
            sg.VerticalSeparator()],
           [sg.HorizontalSeparator()],
           [sg.Stretch(),
@@ -75,10 +75,19 @@ while True:
         senha = ''
         window.FindElement('-output-').Update('')
         
-        tamanho_da_senha = values['-tam_senha-']
+        tamanho_da_senha = values['-tam_senha-']        
+        
+        if tamanho_da_senha == '':
+            
+            sg.Popup('CAMPO OBRIGAT\u00d3RIO VAZIO!!!',
+                     '''O campo de tamanho de senha n\u00e3o pode estar vazio''')
+            tamanho_da_senha == '0'
+            
+            continue
+            
         tamanho = int(tamanho_da_senha)
         
-        if tamanho == 0 or tamanho_da_senha == '' or tamanho < 8:
+        if tamanho == 0 or tamanho < 8:
             sg.Popup('TAMANHO DE SENHA INV\u00c1LIDA!!!',
                           '''A sua senha deve ter mais de 8 caracteres para ter o m\u00ednimo de seguran\u00e7a. Volte \u00e0 tela inicial e altere o valor no campo tamanho da senha...''')
         

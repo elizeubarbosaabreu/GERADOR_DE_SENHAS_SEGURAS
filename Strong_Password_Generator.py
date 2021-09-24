@@ -43,11 +43,11 @@ layout = [[sg.Stretch(), sg.T('GERADOR DE SENHAS SEGURAS', font=('Arial', 18)), 
           [sg.HorizontalSeparator()],
           [sg.Stretch(),
            sg.T('Tamanho da senha:', font=('Arial', 12)),
-           sg.Combo(['8', '9', '10', '11', '12', '13', '14', '15', '20', '25'], key='-tam_senha-', default_value='0'),
+           sg.Combo(['8', '9', '10', '11', '12', '13', '14', '15', '20', '25', '100'], key='-tam_senha-', default_value='0'),
            sg.Stretch()],
           [sg.HorizontalSeparator()],
           [sg.VerticalSeparator(),
-           sg.T('#*sUa_sENHA+vAI%aPAREcER@aQui', font=('Courier', 18), size=(30, 1), key='-output-'),
+           sg.Multiline('#*sUa_sENHA+vAI%aPAREcER@aQui', font=('Courier', 18), size=(30, 1), key='-output-'),
            sg.VerticalSeparator()],
           [sg.HorizontalSeparator()],
           [sg.Stretch(),
@@ -74,7 +74,13 @@ while True:
         
         senha = ''
         window.FindElement('-output-').Update('')
+        
         tamanho_da_senha = values['-tam_senha-']
+        tamanho = int(tamanho_da_senha)
+        
+        if tamanho == 0 or tamanho_da_senha == '' or tamanho < 8:
+            sg.Popup('TAMANHO DE SENHA INV\u00c1LIDA!!!',
+                          '''A sua senha deve ter mais de 8 caracteres para ter o m\u00ednimo de seguran\u00e7a. Volte \u00e0 tela inicial e altere o valor no campo tamanho da senha...''')
         
         for letra in range(int(tamanho_da_senha)):
             
@@ -82,7 +88,6 @@ while True:
                     sortear_minuscula(letras_minusculas),
                     sortear_maiuscula(letras_maiusculas),
                     sortear_caracter(caracteres_especiais))
-
             
             letras = embaralhar(lista_de_funcoes)
             

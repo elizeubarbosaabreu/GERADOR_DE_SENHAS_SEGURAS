@@ -39,25 +39,25 @@ def embaralhar(lista_de_funcoes):
 
 sg.theme('Topanga')
 
-layout = [[sg.Stretch(), sg.T('GERADOR DE SENHAS SEGURAS', font=('Arial', 18)), sg.Stretch()],
-          [sg.HorizontalSeparator()],
+layout = [[sg.Stretch(), sg.Text('GERADOR DE SENHAS', font=('Arial', 18)), sg.Stretch()],
           [sg.Stretch(),
-           sg.T('Tamanho da senha:', font=('Arial', 12)),
+           sg.Text('Tamanho da Senha:', font=('Arial', 12)),
            sg.Combo(['8', '9', '10', '11', '12', '13', '14', '15', '20', '25', '100'],
-                    key='-tam_senha-', default_value='0'),
-           sg.Stretch()],
+                    key='-tam_senha-', default_value='2')],
           [sg.HorizontalSeparator()],
           [sg.VerticalSeparator(),
-           sg.T('#*sUa_sENHA+vAI%aPAREcER@aQui',
+           sg.T('Sua Senha Vai Aparecer Aqui',
                 font=('Courier', 18), size=(30, 1), key='-output-'),
            sg.VerticalSeparator()],
           [sg.HorizontalSeparator()],
-          [sg.Stretch(),
-           sg.Button('Gerar Senha'),
-           sg.Button('Copiar Senha'),
-           sg.Button('Autor'),
-           sg.Stretch()],
-          [sg.HorizontalSeparator()]
+          [sg.VerticalSeparator(),
+           sg.Button('Gerar Senha', size=(14, 1)),
+           sg.VerticalSeparator(),
+           sg.Button('Copiar Senha', size=(14, 1)),
+           sg.VerticalSeparator(),
+           sg.Button('?', size=(14, 1)),
+           sg.VerticalSeparator()],
+           [sg.HorizontalSeparator()]
           ]
 
 window = sg.Window('GERADOR DE SENHAS SEGURAS', layout)
@@ -68,14 +68,18 @@ while True:
     if event == sg.WINDOW_CLOSED:
         break
     
-    elif event == 'Autor':
+    elif event == '?':
+        sg.Popup('Autor', '''
+Este Software foi desenvolvido por Elizeu Barbosa Abreu.
+Carteiro, Licenciado em Ci\u00eancias Biol\u00f3gicas e que tem como hobby programar em Python...
+''')
         webbrowser.open(f'{url}')
         
     
     elif event == 'Gerar Senha':
         
         senha = ''
-        window.FindElement('-output-').Update('')
+        window['-output-'].Update('')
         
         tamanho_da_senha = values['-tam_senha-']        
         
@@ -105,7 +109,7 @@ while True:
             letras = embaralhar(lista_de_funcoes)
             
             senha += str(letras)           
-        window.FindElement('-output-').Update(f'{senha}')  
+        window['-output-'].Update(f'{senha}')  
         
     
     if event == 'Copiar Senha':

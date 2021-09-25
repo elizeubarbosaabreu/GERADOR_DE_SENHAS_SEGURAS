@@ -37,7 +37,7 @@ def sortear_caracter(caracteres_especiais):
 def embaralhar(lista_de_funcoes):
     return choice(lista_de_funcoes)
 
-sg.theme('Topanga')
+sg.theme('Reddit')
 
 layout = [[sg.Stretch(),
            sg.Text('Tamanho da Senha:', font=('Arial', 12)),

@@ -39,8 +39,7 @@ def embaralhar(lista_de_funcoes):
 
 sg.theme('Topanga')
 
-layout = [[sg.Stretch(), sg.Text('GERADOR DE SENHAS', font=('Arial', 18)), sg.Stretch()],
-          [sg.Stretch(),
+layout = [[sg.Stretch(),
            sg.Text('Tamanho da Senha:', font=('Arial', 12)),
            sg.Combo(['8', '9', '10', '11', '12', '13', '14', '15', '20', '25', '100'],
                     key='-tam_senha-', default_value='2')],

@@ -8,7 +8,7 @@ Interface gráfica usando <a href='https://github.com/PySimpleGUI/PySimpleGUI'>p
 # Instalação:
 - Acesse o terminal ou prompt de comando de seu computador e crie um clone deste projeto:
 - git clone https://github.com/elizeubarbosaabreu/GERADOR_DE_SENHAS_SEGURAS.git
-- Sugiro que você utilize uma *máquina virtual* para instalar os requerimentos: use *python -m venv c:\caminho\nome_da_maquina_virtual* no Windows ou *python3 -m venv /caminho/nome_da_maquina_virtual* se estiver no Linux. <a href='https://docs.python.org/pt-br/3/library/venv.html'>Documentação do venv aqui...</a>
+- Sugiro que você utilize uma __máquina virtual__ para instalar os requerimentos: use __python -m venv c:\caminho\nome_da_maquina_virtual__ no Windows ou __python3 -m venv /caminho/nome_da_maquina_virtual__ se estiver no Linux. <a href='https://docs.python.org/pt-br/3/library/venv.html'>Documentação do venv aqui...</a>
 - Entre dentro da pasta e instale os requerimentos:
 - cd /GERADOR_DE_SENHAS_SEGURAS
 - pip install -r requirements.txt

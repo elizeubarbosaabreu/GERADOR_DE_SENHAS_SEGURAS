@@ -1,6 +1,6 @@
 # GERADOR_DE_SENHAS_SEGURAS
 
-<img src='Gerador_de_Senha.png' />
+<img src='image.png' />
 Este é um gerador de senhas seguras com letras e caracteres especiais alternados.
 É possível escolher o número de dígitos que sua senha terá.
 Interface gráfica usando <a href='https://github.com/PySimpleGUI/PySimpleGUI'>pysimplegui</a>

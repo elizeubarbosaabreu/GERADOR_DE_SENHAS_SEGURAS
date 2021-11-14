@@ -42,7 +42,7 @@ sg.theme('Reddit')
 layout = [[sg.Stretch(),
            sg.Text('Tamanho da Senha:', font=('Arial', 12)),
            sg.Combo(['8', '9', '10', '11', '12', '13', '14', '15', '20', '25', '100'],
-                    key='-tam_senha-', default_value='2')],
+                    key='-tam_senha-', default_value='16')],
           [sg.HorizontalSeparator()],
           [sg.VerticalSeparator(),
            sg.T('Sua Senha Vai Aparecer Aqui',
